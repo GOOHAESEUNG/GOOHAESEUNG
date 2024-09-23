@@ -3,7 +3,7 @@
 </div>
 
 <div align= "center">
-      <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Work experience  </h2> <br> 
+      <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💗 Work experience  </h2> <br> 
 
 (21.03 ~ ) 서울여자대학교 소프트웨어융합학과
 
