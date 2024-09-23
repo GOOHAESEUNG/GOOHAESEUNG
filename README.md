@@ -7,4 +7,4 @@
 
 (23.07 ~ ) 구름톤 유니브 서울여자대학교 3기 백엔드 운영진
 
-![GooHaeSeung's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=radical)
+![GooHaeSeung's GitHub stats](https://github-readme-stats.vercel.app/api?username=goohaeseung&show_icons=true&theme=radical)
