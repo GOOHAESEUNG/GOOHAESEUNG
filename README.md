@@ -24,7 +24,7 @@
           </div>
     </div>
     <div align= "center">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 Contact me </h2> <br> 
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 DEV'S LOG </h2> <br> 
     <div align= "center"> <a href=https://velog.io/@haeseung/posts> <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white&link=https://velog.io/@haeseung/posts"> </a>
          <a href=https://gabalsebal.tistory.com/> <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white&link=https://gabalsebal.tistory.com/"> </a>
           </div>  <br> 
