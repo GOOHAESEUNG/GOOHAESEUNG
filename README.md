@@ -2,13 +2,16 @@
   <img src="https://github.com/GOOHAESEUNG/GOOHAESEUNG/blob/main/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-005%20(1).png?raw=true" width="50%" />
 </div>
 
-## Work experience 
+<div align= "center">
+      <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Work experience  </h2> <br> 
+
 (21.03 ~ ) 서울여자대학교 소프트웨어융합학과
 
 (23.03 ~ 23.12) 멋쟁이사자처럼 서울여자대학교 11기 백엔드
 
 (23.07 ~ ) 구름톤 유니브 서울여자대학교 3기 백엔드 운영진
-
+    </div>
+    
 <div align= "center">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
     <div style="margin: 0 auto; text-align: center;" align= "center"> <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=Android&logoColor=white">
