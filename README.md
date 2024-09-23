@@ -1,4 +1,4 @@
-### Hi there 👋
+[### Hi there 👋](https://velog.velcdn.com/images/haeseung/post/5392d31d-d57a-4305-9cd8-968ecd1c335e/image.png)
 
 ## Work experience 
 (21.03 ~ ) 서울여자대학교 소프트웨어융합학과
