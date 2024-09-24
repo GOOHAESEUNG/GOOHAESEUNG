@@ -35,4 +35,7 @@
          /> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GOOHAESEUNG&layout=compact&bg_color=60,feb4b4,ffffff&title_color=ffffff&text_color=ffffff"
            /> </div> 
     </div>
-    
+
+    <div align="center">
+  <img src="https://github.com/GOOHAESEUNG/GOOHAESEUNG/blob/main/%EC%A0%9C%EB%AA%A9%EC%9D%84%20%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-002.png?raw=true" />
+</div>
