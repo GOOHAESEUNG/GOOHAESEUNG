@@ -37,6 +37,6 @@
     </div>
 
 
-    <div align="center">
+<div align="center">
   <img src="https://github.com/GOOHAESEUNG/GOOHAESEUNG/blob/main/%EC%A0%9C%EB%AA%A9%EC%9D%84%20%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-002.png?raw=true" />
 </div>
