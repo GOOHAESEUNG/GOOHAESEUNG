@@ -2,7 +2,10 @@
   <img src="https://github.com/GOOHAESEUNG/GOOHAESEUNG/blob/main/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_.gif?raw=true" />
 </div>
 
+<div align= "center">
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGOOHAESEUNG&count_bg=%23D8D7FF&title_bg=%23FF7C7C&icon=github.svg&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+</div>
+
 
 <div align= "center">
       <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💗 Work experience  </h2> <br> 
