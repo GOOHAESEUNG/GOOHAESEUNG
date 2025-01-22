@@ -16,8 +16,6 @@
 <div align= "center">
       <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💗 Work experience  </h2> <br> 
 
-(21.03 ~ ) 서울여자대학교 소프트웨어융합학과
-
 (23.03 ~ 23.12) 멋쟁이사자처럼 서울여자대학교 11기 백엔드
 
 (23.07 ~ ) 구름톤 유니브 서울여자대학교 3기 백엔드 운영진
