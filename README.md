@@ -40,6 +40,12 @@
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 DEV log </h2> <br> 
          <a href=https://gabalsebal.tistory.com/> <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white&link=https://gabalsebal.tistory.com/"> </a>
           </div>  <br> 
+              <div align= "center">
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🎥 Portfolio </h2> <br> 
+           <a href="https://profuse-river-f99.notion.site/GOOHAESEUNG_BACKEND-0f5811bb33c6435f8d76f665815fccbf" target="_blank">
+    <img src="https://img.shields.io/badge/Notion-Portfolio-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Notion Portfolio">
+  </a>
+          </div>  <br> 
     <div align= "center">  </div> 
     </div>
 <div align= "center"> 
