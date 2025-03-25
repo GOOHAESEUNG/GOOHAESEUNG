@@ -3,16 +3,6 @@
 </div>
 
 
-<div align="center">
-  <a href="https://hits.seeyoufarm.com">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGOOHAESEUNG&count_bg=%23D8D7FF&title_bg=%23FF7C7C&icon=github.svg&icon_color=%23FFFFFF&title=hits&edge_flat=false" alt="Hits">
-  </a>
-</div>
-
-
-
-
-
 <div align= "center">
       <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💗 Work experience  </h2> <br> 
 
