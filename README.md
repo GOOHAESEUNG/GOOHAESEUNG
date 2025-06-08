@@ -47,7 +47,12 @@
          /> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GOOHAESEUNG&layout=compact&bg_color=180,ffffff,00000000&title_color=eda6c2&text_color=eda6c2"
            /> </div> 
     </div>
-    
+
+<div align="center">
+  <a href="https://solved.ac/amu6675">
+    <img src="https://mazassumnida.wtf/api/v2/generate_badge?boj=amu6675" alt="Solved.ac 프로필" />
+  </a>
+</div>
 
 
 
