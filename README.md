@@ -18,9 +18,8 @@
 
 (25.03 ~ ) SUSC 서울여자대학교 엠베서더
 
-(25.08 ~ ) 대학생 IT 연합 동아리 TAVE Makers SURF 백엔드 팀장
-
-    </div>
+(25.08 ~ ) 대학생 IT 연합 동아리 TAVE Makers SURF 백엔드 팀장    
+  </div>
     
 <div align= "center">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
