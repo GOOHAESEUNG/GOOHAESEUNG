@@ -18,7 +18,7 @@
 
 (25.03 ~ ) SUSC 서울여자대학교 엠베서더
 
-(25.08 ~ ) 대학생 IT 연합 동아리 TAVE Makers SURF 백엔드 팀장    
+(25.08 ~ ) 대학생 IT 연합 동아리 TAVE Makers SURF 서버장
   </div>
     
 <div align= "center">
