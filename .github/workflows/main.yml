@@ -1,6 +1,7 @@
 name: Latest blog post workflow
 on:
   schedule:
+    # 매 6시간마다 실행됩니다.
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
@@ -12,4 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
+          # 본인의 티스토리 블로그 RSS 주소를 입력하세요.
           feed_list: "https://gabalsebal.tistory.com/rss"
+          # Tistory의 406 에러 해결을 위해 User-Agent 추가
+          user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
