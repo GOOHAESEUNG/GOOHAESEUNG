@@ -68,7 +68,7 @@ jobs:
                   with open('README.md', 'r', encoding='utf-8') as f:
                       readme = f.read()
                   
-                  blog_section = '''<div align="center">
+                  blog_section = """<div align="center">
 
 # 📝 Latest Blog Posts
 
@@ -79,12 +79,12 @@ jobs:
 <div align="center">
 
 | 🎯 **Post Title** | 📅 **Date** | 🔥 **Read** |
-|:------------------|:------------|:------------|'''
+|:------------------|:------------|:------------|"""
                   
                   for post in blog_posts:
                       blog_section += f"\n| [{post['title']}]({post['link']}) | {post['date']} | [📖 Read]({post['link']}) |"
                   
-                  blog_section += '''
+                  blog_section += """
 
 <br>
 
@@ -95,7 +95,7 @@ jobs:
 
 ![Blog Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer)
 
-'''
+"""
                   
                   start_marker = "<!-- BLOG-POST-LIST:START -->"
                   end_marker = "<!-- BLOG-POST-LIST:END -->"
