@@ -35,10 +35,6 @@
   <!-- BLOG-POST-LIST:START -->
 <div align="center">
 
-# 📝 Latest Blog Posts
-
-![Blog Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=header&text=가발세발%20Blog&fontSize=30&fontColor=white)
-
 </div>
 
 <div align="center">
@@ -54,11 +50,8 @@
 <br>
 
 [![Blog](https://img.shields.io/badge/더%20많은%20글%20보기-FF6B6B?style=for-the-badge&logo=tistory&logoColor=white)](https://gabalsebal.tistory.com)
-[![RSS](https://img.shields.io/badge/RSS%20구독-FFA500?style=for-the-badge&logo=rss&logoColor=white)](https://gabalsebal.tistory.com/rss)
 
 </div>
-
-![Blog Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer)
 <!-- BLOG-POST-LIST:END -->
 </div>
     </div>
