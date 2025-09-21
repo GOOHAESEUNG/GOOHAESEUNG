@@ -10,109 +10,80 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '18'
+          python-version: '3.x'
           
-      - name: Fetch Tistory RSS and Update README
+      - name: Install dependencies and fetch posts
         run: |
-          cat > fetch_posts.js << 'EOF'
-          const https = require('https');
-          const fs = require('fs');
+          pip install requests beautifulsoup4 lxml
+          cat > fetch_tistory.py << 'EOF'
+          import requests
+          import xml.etree.ElementTree as ET
+          from datetime import datetime
+          import re
           
-          const options = {
-            hostname: 'gabalsebal.tistory.com',
-            path: '/rss',
-            method: 'GET',
-            headers: {
+          headers = {
               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-              'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+              'Accept': 'application/rss+xml, application/xml, text/xml',
               'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
-              'Accept-Encoding': 'gzip, deflate, br',
-              'Connection': 'keep-alive',
-              'Upgrade-Insecure-Requests': '1'
-            }
-          };
+          }
           
-          const req = https.request(options, (res) => {
-            let data = '';
-            
-            res.on('data', (chunk) => {
-              data += chunk;
-            });
-            
-            res.on('end', () => {
-              if (res.statusCode === 200) {
-                // XML 파싱 (간단한 정규식 사용)
-                const titleRegex = /<title><!\[CDATA\[(.*?)\]\]><\/title>/g;
-                const linkRegex = /<link>(.*?)<\/link>/g;
-                const pubDateRegex = /<pubDate>(.*?)<\/pubDate>/g;
-                
-                const titles = [];
-                const links = [];
-                const dates = [];
-                
-                let match;
-                while ((match = titleRegex.exec(data)) !== null && titles.length < 5) {
-                  if (match[1] && !match[1].includes('가발세발')) { // 블로그 제목 제외
-                    titles.push(match[1]);
-                  }
-                }
-                
-                linkRegex.lastIndex = 0;
-                while ((match = linkRegex.exec(data)) !== null && links.length < 5) {
-                  if (match[1] && match[1].includes('tistory.com')) {
-                    links.push(match[1]);
-                  }
-                }
-                
-                pubDateRegex.lastIndex = 0;
-                while ((match = pubDateRegex.exec(data)) !== null && dates.length < 5) {
-                  dates.push(new Date(match[1]).toLocaleDateString('ko-KR'));
-                }
-                
-                // README 업데이트
-                let readme = fs.readFileSync('README.md', 'utf8');
-                
-                let blogSection = '## 📝 최근 블로그 포스트\n\n';
-                for (let i = 0; i < Math.min(titles.length, links.length, 5); i++) {
-                  if (titles[i] && links[i]) {
-                    blogSection += `- [${titles[i]}](${links[i]}) - ${dates[i] || ''}\n`;
-                  }
-                }
-                blogSection += '\n';
-                
-                // README에서 기존 블로그 섹션 찾기 및 교체
-                const startMarker = '<!-- BLOG-POST-LIST:START -->';
-                const endMarker = '<!-- BLOG-POST-LIST:END -->';
-                
-                if (readme.includes(startMarker) && readme.includes(endMarker)) {
-                  const before = readme.substring(0, readme.indexOf(startMarker) + startMarker.length);
-                  const after = readme.substring(readme.indexOf(endMarker));
-                  readme = before + '\n' + blogSection + after;
-                } else {
-                  readme += '\n' + startMarker + '\n' + blogSection + endMarker + '\n';
-                }
-                
-                fs.writeFileSync('README.md', readme);
-                console.log('README updated successfully!');
-              } else {
-                console.error('HTTP Error:', res.statusCode);
-                process.exit(1);
-              }
-            });
-          });
-          
-          req.on('error', (error) => {
-            console.error('Request error:', error);
-            process.exit(1);
-          });
-          
-          req.end();
+          try:
+              response = requests.get('https://gabalsebal.tistory.com/rss', headers=headers, timeout=10)
+              print(f"Response status: {response.status_code}")
+              
+              if response.status_code == 200:
+                  root = ET.fromstring(response.content)
+                  items = root.findall('.//item')[:5]
+                  
+                  blog_posts = []
+                  for item in items:
+                      title = item.find('title').text if item.find('title') is not None else ''
+                      link = item.find('link').text if item.find('link') is not None else ''
+                      pub_date = item.find('pubDate').text if item.find('pubDate') is not None else ''
+                      
+                      if title and link:
+                          blog_posts.append({
+                              'title': title,
+                              'link': link,
+                              'date': pub_date
+                          })
+                  
+                  # README 업데이트
+                  with open('README.md', 'r', encoding='utf-8') as f:
+                      readme = f.read()
+                  
+                  blog_section = "## 📝 최근 블로그 포스트\n\n"
+                  for post in blog_posts:
+                      blog_section += f"- [{post['title']}]({post['link']})\n"
+                  blog_section += "\n"
+                  
+                  start_marker = "<!-- BLOG-POST-LIST:START -->"
+                  end_marker = "<!-- BLOG-POST-LIST:END -->"
+                  
+                  if start_marker in readme and end_marker in readme:
+                      before = readme[:readme.find(start_marker) + len(start_marker)]
+                      after = readme[readme.find(end_marker):]
+                      readme = before + "\n" + blog_section + after
+                  else:
+                      readme += f"\n{start_marker}\n{blog_section}{end_marker}\n"
+                  
+                  with open('README.md', 'w', encoding='utf-8') as f:
+                      f.write(readme)
+                  
+                  print("README updated successfully!")
+              else:
+                  print(f"Failed to fetch RSS: {response.status_code}")
+                  exit(1)
+                  
+          except Exception as e:
+              print(f"Error: {e}")
+              exit(1)
           EOF
           
-          node fetch_posts.js
+          python fetch_tistory.py
           
       - name: Commit and push changes
         run: |
