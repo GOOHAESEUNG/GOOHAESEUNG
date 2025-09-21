@@ -6,19 +6,14 @@
 <div align= "center">
       <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💗 Work experience  </h2> <br> 
 
-(23.03 ~ 23.12) 멋쟁이사자처럼 서울여자대학교 11기 백엔드
-
-(24.07 ~ 24.12) 구름톤 유니브 서울여자대학교 3기 백엔드 운영진
-
-(25.02 ~ ) 구름톤 유니브 서울여자대학교 4기 대표
-
-(25.02 ~ ) 구름톤 유니브 4기 서울 북부권 지부 대표
-
-(25.03 ~ 25.08 ) 대학생 IT 연합 동아리 TAVE 백엔드
-
-(25.03 ~ ) SUSC 서울여자대학교 엠베서더
-
-(25.08 ~ ) 대학생 IT 연합 동아리 TAVE Makers SURF 서버장
+| 기간 | 활동 | 역할 |
+|---|---|---|
+| 23.03 ~ 23.12 | 멋쟁이사자처럼 서울여자대학교 11기 | 백엔드 (Back-end) |
+| 24.07 ~ 24.12 | 구름톤 유니브 서울여자대학교 3기 | 백엔드 운영진 (Back-end) |
+| 25.02 ~ 현재 | 구름톤 유니브 서울여자대학교 4기 | 대표 |
+| 25.02 ~ 현재 | 구름톤 유니브 4기 서울 북부권 지부 | 대표 |
+| 25.03 ~ 25.08 | 대학생 IT 연합 동아리 TAVE | 백엔드 (Back-end) |
+| 25.08 ~ 현재 | 대학생 IT 연합 동아리 TAVE Makers SURF | 서버장 |
   </div>
     
 <div align= "center">
@@ -29,20 +24,15 @@
           <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white">
           <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
           <br/><img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white">
-          <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=white">
+          <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
           </div>
     </div>
-    <div align= "center">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 DEV log </h2> <br> 
-         <a href=https://gabalsebal.tistory.com/> <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white&link=https://gabalsebal.tistory.com/"> </a>
-          </div>  <br> 
-              <div align= "center">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🎥 Portfolio </h2> <br> 
-           <a href="" target="_blank">
-    <img src="https://img.shields.io/badge/Notion-Portfolio-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Notion Portfolio">
+<div align="center">
+  <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 DEV log </h2> <br>
+  <a href="https://gabalsebal.tistory.com/">
+    <img src="https://img.shields.io/badge/Tistory-FF5A00?style=for-the-badge&logo=Tistory&logoColor=white">
   </a>
-          </div>  <br> 
-    <div align= "center">  </div> 
+</div>
     </div>
 <div align= "center"> 
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🏅 Stats </h2> <div align= "center"> <img src="https://github-readme-stats.vercel.app/api?username=GOOHAESEUNG&bg_color=180,ffffff,00000000&title_color=eda6c2&text_color=eda6c2"
