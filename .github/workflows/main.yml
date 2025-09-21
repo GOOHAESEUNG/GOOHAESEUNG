@@ -1,16 +1,123 @@
-name: Latest blog post workflow
+name: Update README with Tistory posts
 on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
-  update-readme-with-blog:
-    name: Update this repo's README with latest blog posts
+  update-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # v3 → v4로 업데이트
-      - uses: gautamkrishnar/blog-post-workflow@master  # 최신 버전 사용
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          feed_list: "https://gabalsebal.tistory.com/rss"
-          user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+          node-version: '18'
+          
+      - name: Fetch Tistory RSS and Update README
+        run: |
+          cat > fetch_posts.js << 'EOF'
+          const https = require('https');
+          const fs = require('fs');
+          
+          const options = {
+            hostname: 'gabalsebal.tistory.com',
+            path: '/rss',
+            method: 'GET',
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+              'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
+              'Accept-Encoding': 'gzip, deflate, br',
+              'Connection': 'keep-alive',
+              'Upgrade-Insecure-Requests': '1'
+            }
+          };
+          
+          const req = https.request(options, (res) => {
+            let data = '';
+            
+            res.on('data', (chunk) => {
+              data += chunk;
+            });
+            
+            res.on('end', () => {
+              if (res.statusCode === 200) {
+                // XML 파싱 (간단한 정규식 사용)
+                const titleRegex = /<title><!\[CDATA\[(.*?)\]\]><\/title>/g;
+                const linkRegex = /<link>(.*?)<\/link>/g;
+                const pubDateRegex = /<pubDate>(.*?)<\/pubDate>/g;
+                
+                const titles = [];
+                const links = [];
+                const dates = [];
+                
+                let match;
+                while ((match = titleRegex.exec(data)) !== null && titles.length < 5) {
+                  if (match[1] && !match[1].includes('가발세발')) { // 블로그 제목 제외
+                    titles.push(match[1]);
+                  }
+                }
+                
+                linkRegex.lastIndex = 0;
+                while ((match = linkRegex.exec(data)) !== null && links.length < 5) {
+                  if (match[1] && match[1].includes('tistory.com')) {
+                    links.push(match[1]);
+                  }
+                }
+                
+                pubDateRegex.lastIndex = 0;
+                while ((match = pubDateRegex.exec(data)) !== null && dates.length < 5) {
+                  dates.push(new Date(match[1]).toLocaleDateString('ko-KR'));
+                }
+                
+                // README 업데이트
+                let readme = fs.readFileSync('README.md', 'utf8');
+                
+                let blogSection = '## 📝 최근 블로그 포스트\n\n';
+                for (let i = 0; i < Math.min(titles.length, links.length, 5); i++) {
+                  if (titles[i] && links[i]) {
+                    blogSection += `- [${titles[i]}](${links[i]}) - ${dates[i] || ''}\n`;
+                  }
+                }
+                blogSection += '\n';
+                
+                // README에서 기존 블로그 섹션 찾기 및 교체
+                const startMarker = '<!-- BLOG-POST-LIST:START -->';
+                const endMarker = '<!-- BLOG-POST-LIST:END -->';
+                
+                if (readme.includes(startMarker) && readme.includes(endMarker)) {
+                  const before = readme.substring(0, readme.indexOf(startMarker) + startMarker.length);
+                  const after = readme.substring(readme.indexOf(endMarker));
+                  readme = before + '\n' + blogSection + after;
+                } else {
+                  readme += '\n' + startMarker + '\n' + blogSection + endMarker + '\n';
+                }
+                
+                fs.writeFileSync('README.md', readme);
+                console.log('README updated successfully!');
+              } else {
+                console.error('HTTP Error:', res.statusCode);
+                process.exit(1);
+              }
+            });
+          });
+          
+          req.on('error', (error) => {
+            console.error('Request error:', error);
+            process.exit(1);
+          });
+          
+          req.end();
+          EOF
+          
+          node fetch_posts.js
+          
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --quiet || git commit -m "Update README with latest blog posts"
+          git push
