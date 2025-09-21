@@ -29,9 +29,6 @@
     </div>
 <div align="center">
   <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 DEV log </h2> <br>
-  <a href="https://gabalsebal.tistory.com/">
-    <img src="https://img.shields.io/badge/Tistory-FF5A00?style=for-the-badge&logo=Tistory&logoColor=white">
-  </a>
   <!-- BLOG-POST-LIST:START -->
 <div align="center">
 
