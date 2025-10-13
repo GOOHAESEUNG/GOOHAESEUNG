@@ -58,12 +58,6 @@
            /> </div> 
     </div>
 
-<div align="center">
-  <a href="https://solved.ac/amu6675">
-    <img src="https://mazassumnida.wtf/api/v2/generate_badge?boj=amu6675" alt="Solved.ac 프로필" />
-  </a>
-</div>
-
 
 
 <div align="center">
