@@ -27,7 +27,7 @@
 ## Tech Stack
 
 ```
-Java · Spring Boot · Python · Django · MySQL · AWS
+Java · Spring Boot · Python · Django · MySQL · AWS · Docker
 ```
 
 <br>
