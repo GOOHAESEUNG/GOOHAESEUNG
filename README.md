@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="fmoon.gif" width="120" />
+<img src="fmoon.gif" width="600" />
 
 <h1>Goo Haeseung</h1>
 
