@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="moon.gif" width="120" />
+
 <h1>Goo Haeseung</h1>
 
 <p><strong>Backend Developer</strong> · <strong>Community Builder</strong></p>
