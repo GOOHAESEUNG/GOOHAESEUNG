@@ -48,7 +48,6 @@ Java · Spring Boot · Python · Django · MySQL · AWS · Docker
 ## GitHub Stats
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=GOOHAESEUNG&show_icons=true&hide_border=true&bg_color=00000000&title_color=C4A484&icon_color=D4B896&text_color=A67B5B" height="160" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GOOHAESEUNG&layout=compact&hide_border=true&bg_color=00000000&title_color=C4A484&text_color=A67B5B" height="160" />
 </div>
 <br>
 
